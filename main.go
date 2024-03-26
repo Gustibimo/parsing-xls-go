@@ -35,37 +35,12 @@ func main() {
 	// 	}
 	// }
 	//
-	// fmt.Println("print cities")
-	// for _, city := range cities {
-	// 	fmt.Println(city)
-	// }
+	fmt.Println("sheets in file:")
+	for _, sheet := range wb.Sheets {
+		fmt.Println(sheet.Name)
+	}
 
-	// sheet, ok := wb.Sheet[sheetName]
-	// if !ok {
-	// 	fmt.Println("Sheet not found")
-	// 	return
-	// }
-	// for _, row := range sheet.Rows {
-	// 	city := Cities{}
-	// 	for i, cell := range row.Cells {
-	// 		switch i {
-	// 		case 0:
-	// 			city.Name = cell.String()
-	// 		case 2:
-	// 			city.Population, _ = cell.Float()
-	// 		}
-	// 	}
-	// 	cities = append(cities, city)
-	// }
-	//
-	// fmt.Println("print cities")
-	//
-	// for _, city := range cities {
-	// 	fmt.Println(city)
-	// }
-	//
-	//
-
+	// read from specific sheet and map to struct
 	sheet, ok := wb.Sheet[sheetName]
 	if !ok {
 		fmt.Println("Sheet not found")
